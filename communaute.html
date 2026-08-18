@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!--Encodage-->
+    <meta charset="UTF-8">
+
+    <!--Responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CreatorTips - Communauté</title>
+    <meta name="description" content="Échangez avec la communauté CreatorTips : publiez vos vidéos et commentez celles des autres.">
+
+    <!--Liaison CSS externe-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>CreatorTips</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="video.html">Vidéos Tips</a>
+            <a href="communaute.html" aria-current="page">Communauté</a>
+            <a href="inscription.html">Inscription</a>
+        </nav>
+    </header>
+    <div class="scrubber"></div>
+
+    <main>
+        <section class="communaute-intro">
+            <h2 class="page-title">Espace Communauté</h2>
+            <p class="bienvenue">Bienvenue, <strong id="pseudo-utilisateur">Invité</strong> ! Partagez vos vidéos et échangez avec les autres créateurs.</p>
+        </section>
+
+        <section class="publication">
+            <h3>Publier une vidéo</h3>
+            <form id="form-publication" class="form-publication">
+                <div class="champ">
+                    <label for="titre-video">Titre</label>
+                    <input type="text" id="titre-video" name="titre-video" placeholder="Donnez un titre à votre vidéo" required>
+                </div>
+                <div class="champ">
+                    <label for="fichier-video">Vidéo</label>
+                    <input type="file" id="fichier-video" name="fichier-video" accept="video/*">
+                </div>
+                <button type="submit" class="btn">Publier</button>
+            </form>
+            <p class="note-demo">Démo locale : les vidéos ajoutées ne restent visibles que dans ce navigateur.</p>
+        </section>
+
+        <section class="fil">
+            <h3>Fil de la communauté</h3>
+            <div id="fil-communaute" class="fil-communaute">
+                <!-- Rempli dynamiquement par js/communaute.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; CreatorTips 2026 - Projet HTML/CSS - Seheno IM : 3992 - MDi L2</p>
+    </footer>
+
+    <script src="js/communaute.js"></script>
+</body>
+</html>

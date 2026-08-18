@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!--Encodage-->
+    <meta charset="UTF-8">
+
+    <!--Responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CreatorTips - Inscription</title>
+    <meta name="description" content="Inscrivez-vous à CreatorTips pour recevoir nos conseils de création de contenu.">
+
+    <!--Liaison CSS externe-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>CreatorTips</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="video.html">Vidéos Tips</a>
+            <a href="communaute.html">Communauté</a>
+            <a href="inscription.html" aria-current="page">Inscription</a>
+        </nav>
+    </header>
+    <div class="scrubber"></div>
+
+    <main>
+        <div class="form-wrapper">
+            <h2>Inscription</h2>
+            <p>Rejoignez la communauté CreatorTips.</p>
+            <form id="form-inscription">
+                <div class="champ">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                </div>
+                <div class="champ">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+                </div>
+                <div class="champ">
+                    <label for="mdp">Mot de passe</label>
+                    <input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe" required>
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; CreatorTips 2026 - Projet HTML/CSS - Seheno IM : 3992 - MDi L2</p>
+    </footer>
+
+    <script>
+        // Démo front-end : pas de vrai serveur, on simule l'inscription
+        // puis on redirige vers l'espace communauté.
+        document.getElementById("form-inscription").addEventListener("submit", function (evenement) {
+            evenement.preventDefault();
+            const nom = document.getElementById("nom").value.trim();
+            localStorage.setItem("creatortips_pseudo", nom || "Invité");
+            window.location.href = "communaute.html";
+        });
+    </script>
+</body>
+</html>
